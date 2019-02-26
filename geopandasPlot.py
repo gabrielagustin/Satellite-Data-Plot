@@ -4,6 +4,10 @@ Created on Tue Nov 27 20:16:04 2018
 
 @author: gag
 
+Script that graphs satellite image coming from the SMAP mission of level L1B file .H5
+next to georeferenced points obtained from the KML file on the Antarctica.
+
+
 """
 
 import os
