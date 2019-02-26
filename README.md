@@ -6,3 +6,10 @@ Dependences:
 
     python - Geopandas
     python - Basemap
+
+
+Pages source:
+
+http://geopandas.org/index.html
+
+https://basemaptutorial.readthedocs.io/en/latest/index.html
