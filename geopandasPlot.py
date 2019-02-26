@@ -15,16 +15,13 @@ import geopandas as gpd
 import functions
 import matplotlib.pyplot as plt
 
-# from geopy.distance import distance
-
 
 
 if __name__ == "__main__":
 
     # If a certain environment variable is set, look there for the input
     # file, otherwise look in the current directory.
-    hdfFile = '/home/gag/Escritorio/SMAP_L1B/SMAP_L1B_TB_20137_A_20181108T101842_R16020_001.h5'
-    # hdfFile = '/home/gag/Escritorio/SMAP_L1B/SMAP_L1B_TB_00884_D_20150402T002943_R16010_001.h5'
+    hdfFile = '/.../SMAP_L1B/SMAP_L1B_TB_20137_A_20181108T101842_R16020_001.h5'
     try:
         hdfFile = os.path.join(os.environ['HDFEOS_ZOO_DIR'], hdffile)
     except KeyError:
@@ -37,11 +34,10 @@ if __name__ == "__main__":
     pdHDF = functions.read_SMAP_L1B_HDF_box(hdfFile, box_lat, box_lon, nameVariable)
 
     gdfHDF = gpd.GeoDataFrame(pdHDF, geometry='Coordinates')
-    # # print(gdfHDF)
-
+    #print(gdfHDF)
 
     ##### lee el archivo KML y se crea un objeto geopandas
-    kmlFile = "/home/gag/Escritorio/Lineas_de_vuelo_Antartida/2018_UWBRAD_flight_1.kml"
+    kmlFile = "/.../Lineas_de_vuelo_Antartida/2018_UWBRAD_flight_1.kml"
     pdKML = functions.readKML(kmlFile)
     gdfKML = gpd.GeoDataFrame(pdKML, geometry='Coordinates')
 
@@ -52,8 +48,6 @@ if __name__ == "__main__":
     ax = world[world.continent == 'Antarctica'].plot(
         color='white', edgecolor='black')
 
-    
-    
     gdfHDF.plot(ax=ax, cmap=plt.cm.jet)
     gdfKML.plot(ax=ax, color='red')
     
