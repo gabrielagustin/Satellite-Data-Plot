@@ -4,14 +4,17 @@ Description:
 Samples of satellite data graphics are presented in this repository using the Geopandas and Basemap libraries
 
 
-Basemap: 
+Basemap plot: 
 
 <p align="center">
-  <img width=850 src="SMAP_L1B_Tb_V.png"/>
+  <img width=850 src="SMAP_L1B_Tb_V_basemap.png"/>
  </p>
 
 Geopandas:
 
+<p align="center">
+  <img width=850 src="SMAP_L1B_Tb_V_geopandas.png"/>
+ </p>
 
 
 Dependences:
