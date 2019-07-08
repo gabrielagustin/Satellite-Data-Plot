@@ -8,8 +8,6 @@ Created on Tue Nov 27 20:16:04 2018
 """
 
 
-
-
 from pykml import parser
 from os import path
 import pandas as pd
@@ -20,6 +18,16 @@ import h5py
 
 
 def readKML(filename):
+    """ Read KML file extracts the coordinates (Lat, Lon) and generates a pandas object that then returns
+
+    Parameters:
+    -----------
+    data : String instances that contain file path
+
+    Returns: 
+    --------
+    Pandas DataFrame: coordinates (Lat, Lon)
+    """
 
     kml_file = path.join(filename)
 
@@ -60,14 +68,22 @@ def readKML(filename):
 
 
 def read_SMAP_L1B_HDF_box(FILE_NAME, box_lat, box_lon, nameVariableArray):
+    """ Read a SMAP L1B satellite image in .H5 format
+
+    Parameters:
+    -----------
+    FILE_NAME : complete path of the image 
+    
+    box_lat, box_lon: latitude and longitude of the specific study area
+
+    nameVariableArray: vector of the variables to be read
+
+    Returns: 
+    --------
+    Pandas DataFrame: it has as columns the coordinates (Lat, Lon) and the variables 
+                      read for each pixel.
     """
-    Lee la imagen satelital SMAP L1B en formato .H5
-    Recibe el path completo de la image, el box del área específica y las variables a leer
-    A diferencia de la función anterior sólo lee una porción de la imagen satelital,
-    lee el área que recibe en box
-    Retorna un objeto pandas el cual posee como columnas las coordenadas (Lat, Lon)
-    y las variables leidas para cada pixel. 
-    """
+
     db=pd.DataFrame()
     pd.options.mode.chained_assignment = None
     with h5py.File(FILE_NAME, mode='r') as f:
