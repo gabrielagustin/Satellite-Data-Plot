@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+
+'''
+
+Created on Tue Feb  5 10:58:49 2020
+Author: Gabriel Agustín Garcia
+Copyright (c) 2020 Your Company
+'''
+
+
+
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,14 +25,11 @@ print(type(provincias))
 
 
 ###  La Pampa, Neuquén, Río Negro, Chubut, Santa Cruz y Tierra del Fuego, Antártida e Islas del Atlántico Sur
-# patagonia = ['La Pampa', 'Neuquén','Río Negro', 'Chubut', 'Santa Cruz', 'Tierra del Fuego']
+patagonia = ['La Pampa', 'Neuquén','Río Negro', 'Chubut', 'Santa Cruz', 'Tierra del Fuego']
 
-patagonia = ['Neuquén']
+litoral = ['Misiones', 'Corrientes', 'Entre Ríos','Formosa', 'Chaco', 'Santa Fe']
 
-map_dep1 = provincias[provincias.nam.isin(patagonia)]
-# outputFile = "/home/ggarcia/Documents/Satellogic/Tests/Neuquen_Metano/Neuquen.shp"
-# map_dep1.to_file(driver = 'ESRI Shapefile', filename = outputFile)
-
+map_dep1 = provincias[provincias.nam.isin(litoral)]
 
 
 ax = map_dep1.plot(alpha=0.5, edgecolor='k')
