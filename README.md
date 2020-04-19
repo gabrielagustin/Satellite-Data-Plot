@@ -7,13 +7,13 @@ Samples of satellite data graphics are presented in this repository using the Ge
 Basemap plot: 
 
 <p align="center">
-  <img width=650 src="SMAP_L1B_Tb_V_basemap.png"/>
+  <img width=650 src="images/SMAP_L1B_Tb_V_basemap.png"/>
  </p>
 
 Geopandas:
 
 <p align="center">
-  <img width=650 src="SMAP_L1B_Tb_V_geopandas.png"/>
+  <img width=650 src="images/SMAP_L1B_Tb_V_geopandas.png"/>
  </p>
 
 
