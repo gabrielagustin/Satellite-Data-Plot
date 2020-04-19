@@ -30,5 +30,8 @@ map_dep1 = provincias[provincias.nam.isin(litoral)]
 
 
 ax = map_dep1.plot(alpha=0.5, edgecolor='k')
+ax.set_xlabel('Longitud')
+ax.set_ylabel('Latitud')
+
 plt.show()
 
