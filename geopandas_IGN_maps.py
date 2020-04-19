@@ -8,12 +8,9 @@ Author: Gabriel Agustín Garcia
 Copyright (c) 2020 Your Company
 '''
 
-
-
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+
 
 plt.rcParams['figure.figsize'] = (10,5)
 
